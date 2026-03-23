@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Task Manager(Chadi, Shaquille
+        )</title>
+</head>
+<body class="min-h-screen flex justify-center items-center bg-gray-100">
+
+<div class="bg-white rounded-2xl shadow-xl w-[800px] p-8 space-y-6">
+
+
+
+    <h1 class="text-3xl font-bold">Task Manager(Chadi, Shaquille
+        )</h1>
+    
+        <div class="bg-gray-100 rounded-xl p-6 space-y-4">
+
+            <div class="space-y-2">
+                <label class="text-sm text-gray-600">Title</label>
+                <input class="w-full p-2 rounded border bg-white" id="title" placeholder="Title" />
+            </div>
+            
+            <div class="space-y-2">
+                <label class="text-sm text-gray-600">Description</label>
+                <textarea class="w-full p-2 rounded border bg-white" id="description" placeholder="Description"></textarea>
+            </div>
+
+
+            <div class="flex justify-between items-center">
+                 <div class="flex items-center gap-2">
+                    <input type="checkbox" id="completed" class="border border-gray-400 rounded-md" onchange="checkLabel()" /> 
+                    <label class="text-gray-600">Mark as completed</label>
+                 </div>
+
+                 <button class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700" id="addTask" onclick="addTask()">+ Add Task</button>
+
+            </div>
+    </div>
+
+    <div class="flex justify-between items-center">
+        <h2 class="text-xl font-semibold">Tasks</h2>
+        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold" id="taskCount">
+           
+        </span>
+    </div>
+
+    <div class="space-y-4">
+        <ul class="space-y-4 max-h-[400px] overflow-y-auto"  id="taskList"></ul>
+    </div>
+        
+
+
+</div>
+
+   
+
+
+        <script src="app.js"></script>
+</body>
+</html>
