@@ -35,11 +35,7 @@ async function loadTasks(){
     
         tasks.forEach(task => {
 
-            if(!Array.isArray(task)){
-                console.log("Invalid task data");
-                return;
-            }
-
+           
             //create a new list item for each task
             const li = document.createElement('li');
     
