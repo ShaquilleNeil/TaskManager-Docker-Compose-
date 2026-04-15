@@ -30,7 +30,7 @@ app.post('/tasks', (req, res) => {
     const result = db.prepare('INSERT INTO tasks (title, description, completed) VALUES (?, ?, ?)')
         .run(title, description, completed ? 1 : 0);
 
-    // result.lastInsertRowid replaces this.lastID from the sqlite3 callback
+    
     res.status(201).json({
         id: result.lastInsertRowid,
         title,
@@ -43,7 +43,7 @@ app.post('/tasks', (req, res) => {
 // GET /tasks — return all tasks
 app.get('/tasks', (req, res) => {
 
-    // .all() replaces db.all() with a callback — just returns the array directly
+    
     const rows = db.prepare('SELECT * FROM tasks').all();
 
     const tasks = rows.map(task => ({
@@ -64,7 +64,7 @@ app.put('/tasks/:id', (req, res) => {
     // .get() replaces db.get() with a callback — returns one row or undefined
     const task = db.prepare('SELECT * FROM tasks WHERE id = ?').get(id);
 
-    // no more nested callback — we can just check and return early
+    
     if (!task) {
         return res.status(404).json({ error: 'Task not found' });
     }

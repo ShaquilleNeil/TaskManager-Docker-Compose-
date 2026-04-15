@@ -98,9 +98,9 @@ async function addTask(){
         body: JSON.stringify({ title, description, completed })
      });
 
-document.getElementById('title').value = '';
-document.getElementById('description').value = '';
-document.getElementById('completed').checked = false;
+        document.getElementById('title').value = '';
+        document.getElementById('description').value = '';
+        document.getElementById('completed').checked = false;
 
      loadTasks();
      
